@@ -16,7 +16,7 @@ app.get('/', function(req, res){
   for (var p in req.query){
     getParameters.push({'name':p, 'value':req.query[p]})
   }
-  var context = {};
+  var context = {"reqType": "GET"};
   context.recievedData = getParameters;
   res.render('requestTypeReturn', context);
 });
